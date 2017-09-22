@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+
+development:
+  <<: *default
+  database: item-inventory_development
+
+test:
+  <<: *default
+  database: item-inventory_test
+
+production:
+  <<: *default
+  database: item-inventory_production
+  username: item-inventory
+  password: <%= ENV['ITEM-INVENTORY_DATABASE_PASSWORD'] %>
