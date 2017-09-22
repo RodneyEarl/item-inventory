@@ -31,6 +31,7 @@ gem 'devise'
 gem 'simple_form'
 
 # Bootstrap
+gem 'jquery-rails'
 gem 'bootstrap'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
